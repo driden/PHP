@@ -24,10 +24,10 @@ h2#title{
 }
 #cards{
     background-color: blue;
-    height: 450px;
+    height: 475px;
 }
 
 #paging{
     background-color: coral;
-    height: 50px;
+    height: 25px;
 }
