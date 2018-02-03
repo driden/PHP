@@ -1,0 +1,33 @@
+#header{
+    background-color: bisque;
+}
+
+img#logo {
+    height: 130px;
+    width: 150px;
+}
+h2#title{
+    
+    text-align: left;
+    vertical-align: center;
+}
+
+#filters{
+    background-color: chartreuse;
+    width: 30%;
+    height: 500px;
+    float: left;
+}
+#results{
+    float: right;
+    width: 70%;
+}
+#cards{
+    background-color: blue;
+    height: 450px;
+}
+
+#paging{
+    background-color: coral;
+    height: 50px;
+}
