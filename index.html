@@ -1,55 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sitio de Ventas</title>
-    <link rel="stylesheet" href="./css/ventas.css" type="text/css" >
+    <link href="./css/estilos.css" rel="stylesheet" type="text/css">
+
+    <title>Mascotas sin hogar</title>
+
 </head>
+
 <body>
-    <div id="encabezado">
-        <img src="./img/logo.png" alt="logo">
-        <h1>Sitio de Ventas</h1>
-        <h2>El mejor sitio de compras en la web</h2>
+    <div id="header">
+        <img src="./img/logo.png" alt="Logo" id="logo">
+        <h2 id="title">Mascotas sin hogar</h2>
     </div>
-    <div id="menu">
-        <ul>
-            <li><a href="#">Pagina principal</a></li>
-            <li><a href="#">Iniciar Sesion</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </div>
-    <div id="buscador">
-        <label for="">Ingresa tu busqueda</label>
-        <input type="text">
-        <input type="button" value="Buscar">
-    </div>
-    <div id="categorias">
-        <h2>Categorias</h2>
-        <li><a href="#">Procesadores</a></li>
-        <li><a href="#">Memorias</a></li>
-        <li><a href="#">Otros</a></li>
-    </div>
-    <div id="productos">
-        <div class="producto">
-            <img src="./img/producto1.png" alt="">
-            <span class="nombre-producto">Pentium III</span>
-            <p>Procesador muy lento y viejo!</p>
-            <span class="precio-producto">U$S 10</span>
+    <div id="filters">FILTROS</div>
+    <div id="results">
+        <div id="cards">
+            <div class="card">
+              <p>Título: ¡Se perdió Bisque!</p>
+              <p>Foto:</p>
+
+                <img src="./img/logo.png" alt="Logo" id="logo">
+                <p>Descripción: </p>
+                 Esto es una prueba. Tenemos que limitar el tamaño de la descripción a un máximo de 150 caracteres por aviso.
+            </div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
         </div>
-        <div class="producto">
-            <img src="./img/producto2.png" alt="">
-            <span class="nombre-producto">Pentium IV</span>
-            <p>Procesador muy lento!</p>
-            <span class="precio-producto">U$S 30</span>
-        </div>
-        <div class="producto">
-            <img src="./img/producto3.png" alt="">
-            <span class="nombre-producto">i3</span>
-            <p>Procesador poco potente</p>
-            <span class="precio-producto">U$S 100</span>
-        </div>
+
+        <div id="paging">5 | 10 | 15 | 20</div>
     </div>
 </body>
+
 </html>
