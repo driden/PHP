@@ -45,3 +45,9 @@ h2#title{
     background-color: coral;
     height: 25px;
 }
+
+p.description {
+    margin-top: 0px;
+    
+
+}
