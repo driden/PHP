@@ -17,8 +17,12 @@
 
 <body>
     <div id="header">
-        <img src="./img/logo.png" alt="Logo" id="logo">
-        <h2 id="title">Mascotas sin hogar</h2>
+        <div id="logo">
+            <img src="./img/logo.png" alt="Logo" id="logo">
+        </div>
+        <div id="title">
+            <span>Mascotas sin hogar</span>
+        </div>
     </div>
     
     <div id="filters"> <center id="mainFilterTitle">FILTROS DE BÚSQUEDA</center>
@@ -86,7 +90,6 @@
                         de 150 caracteres por aviso</p>
                 </div>
             </div>
-
             <div class="card">
                 <div class="cardBlock">
                     <span class="banner lost">Se perdió {nombre} en {barrio}</span>
@@ -224,7 +227,9 @@
             </div>
 
 
-            <div id="paging">5 | 10 | 15 | 20</div>
+            <div id="paging">
+                <span>5 | 10 | 15 | 20</span>
+            </div>
         </div>
 
 </body>
