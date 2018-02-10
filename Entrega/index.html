@@ -20,10 +20,13 @@
         <img src="./img/logo.png" alt="Logo" id="logo">
         <h2 id="title">Mascotas sin hogar</h2>
     </div>
-    <div id="filters">FILTROS DE BÚSQUEDA
+    
+    <div id="filters"> <center id="mainFilterTitle">FILTROS DE BÚSQUEDA</center>
+        <div id="innerFiltersDiv">
         <form action="/action_page.php">
             <div>
                 <select name="pubType" form="filters">
+                    
                     <option value="" disabled selected>Tipo de publicacion</option>
                     <option value="found">Encontrada</option>
                     <option value="lost">Perdida</option>
@@ -63,6 +66,8 @@
             </div>
 
         </form>
+    
+    </div>
     </div>
     <div id="results">
         <div id="cards">
