@@ -1,10 +1,10 @@
 #filters {
     width: 29%;
-    height: 1500px;
+    height: 600px;
     float: left;
     border-style: solid;
     border-width: 1px;
-    position: fixed;
+    position: absolute;
 }
 
 #filters select {
