@@ -6,11 +6,30 @@ body {
     background-color: bisque;
 }
 
-img#logo {
+div#logo {
+    display: inline-block;
+    position: relative;
+    top: 15px;
+    left: 55px;
+}
+div#logo img {
     height: 130px;
-    width: 150px;
+    width: auto;
 }
 
+div#title{
+    display: inline-block;
+    left: 150px;
+    bottom: 90px;
+}
+#title > span {
+    position: relative;
+    bottom: 20px;
+    font-size: 6em;
+    font-weight: bold;
+    left: 75px;
+    
+}
 img.photo {
     height: 130px;
     width: auto;
@@ -18,13 +37,6 @@ img.photo {
     margin-left: auto;
     margin-right: auto;
 }
-
-h2#title {
-    position: relative;
-    left: 150px;
-    bottom: 90px;
-}
-
 #results {
     float: right;
     width: 70%;
@@ -44,6 +56,7 @@ h2#title {
     margin-left: 6%;
     margin-top: 5%;
     display: -webkit-inline-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #paging {
