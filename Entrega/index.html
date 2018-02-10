@@ -20,23 +20,21 @@
         <h2 id="title">Mascotas sin hogar</h2>
     </div>
     <div id="filters">FILTROS
-    <form action="/action_page.php">
-        <div>
-            <label>Tipo de Publicación</label>
-            <select name="pubType" form="filters">
-                <option value="found">Encontrada</option>
-                <option value="lost">Perdida</option>
-            </select>
-            
-        </div>
+        <form action="/action_page.php">
+            <div>
+
+                <select name="pubType" form="filters">
+                    <option value="" disabled selected>Tipo de publicacion</option>
+                    <option value="found">Encontrada</option>
+                    <option value="lost">Perdida</option>
+                </select>
+
+            </div>
             <br></br>
 
             <div>
-                <label>Especie</label>
-
-
-
                 <select name="pubType" form="filters">
+                    <option value="" disabled selected>Especie</option>
                     <option value="dog">Perro</option>
                     <option value="cat">Gato</option>
                     <option value="parrot">Loro</option>
@@ -47,10 +45,10 @@
             <br></br>
 
             <div>
-                <label>Raza</label>
 
 
                 <select name="race" form="filters">
+                    <option value="" disabled selected>Raza</option>
                     <option value="race1">Ovejero</option>
                     <option value="race2">Gato siames</option>
                     <option value="race3">Beagle</option>
@@ -60,10 +58,11 @@
             </div>
             <br></br>
             <div>
-                <label>Barrio</label>
+
 
 
                 <select name="neighbourhood" form="filters">
+                        <option value="" disabled selected>Barrio</option>
                     <option value="1">Carrasco Norte</option>
                     <option value="2">Malvin</option>
                     <option value="3">Pocitos</option>
@@ -72,7 +71,7 @@
                 </select>
             </div>
 
-    </form>
+        </form>
 
 
 
