@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.border {
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.publicacion {
+    position: relative;
+    left: 10%;
+    width: 80%;
+    margin-top: 40px;
+}
+
+#photos img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#photos img{
+    height: 500px;
+    width: 700px;
+}
+
+.margin20{
+    margin: 0 20% 0 20%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+  content: '';
+}
