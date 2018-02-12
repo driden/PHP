@@ -10,13 +10,17 @@
     <link href="./css/cards.css" rel="stylesheet" type="text/css">
     <link href="./css/landing.css" rel="stylesheet" type="text/css">
     <link href="./css/header.css" rel="stylesheet" type="text/css">
-    <link href="./css/paging.css" rel="stylesheet" type="text/css">    
+    <link href="./css/paging.css" rel="stylesheet" type="text/css">
     <link href="./css/filtros.css" rel="stylesheet" type="text/css">
+   
     <script src="./js/scripts.js"></script>
 
     <title>Mascotas sin hogar</title>
+    <link href="form.html" rel="import" />
+    <link href="./css/formStyles.css" rel="stylesheet" type="text/css">
 
 </head>
+
 
 <body>
     <div id="header">
@@ -28,7 +32,7 @@
         </div>
     </div>
 
-    <div id="filters">
+        <div id="filters">
         <div id="mainFilterTitle">
             <span>Filtros de Búsqueda</span>
         </div>
@@ -79,7 +83,13 @@
 
         </div>
     </div>
+    
     <div id="results">
+            <div w3-include-html="form.html"></div>
+    <p align="right">
+           <b><a href="form.html">Iniciar sesión</a></b>
+        </p>
+        
         <div id="cards">
             <div class="card">
                 <div class="cardBlock">
