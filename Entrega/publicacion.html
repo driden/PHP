@@ -11,8 +11,8 @@
     <link href="./css/cards.css" rel="stylesheet" type="text/css">
     <link href="./css/publicacion.css" rel="stylesheet" type="text/css">
     <link href="./css/common.css" rel="stylesheet" type="text/css">
+    <link href="./css/map.css" rel="stylesheet" type="text/css">
 
-    
 
     <title>Ver publicación</title>
 </head>
@@ -31,7 +31,7 @@
     <!-- PUBLICACION -->
     <div class="publicacion border">
 
-        <div class="banner found large">Se encontro {especie}, responde al nombre de {nombre}</div>
+        <div class="banner found large">Se encontro {especie}, de raza {raza} {responde al nombre de {nombre}}</div>
         <div class="margin20">
             <div id="photos">
                 <div>
@@ -51,10 +51,59 @@
                 </div>
             </div>
         </div>
-        <div id="data">datos</div>
-        <div id="location">mapa</div>
-        <div id="questions">Q&AMP;A</div>
-        <div id="pdfExport">PDF</div>
+        <br>
+        <br>
+        <div id="data">
+            <h2>Información:</h2>
+            <p>
+                <span>Datos de contacto: {telefono}</span>
+            </p>
+            <p>
+                <span>Fecha: {fecha}</span>
+            </p>
+            <p>
+                <span>Zona: {zona}</span>
+            </p>
+        </div>
+        <br>
+        <br>
+        <div id="map">
+        </div>
+        <br>
+        <br>
+        <div id="questions">
+            <h2>Preguntas y Respuestas:</h2>
+            <div class="pregunta">
+                <p>Esta es mi preguntaEsta es mi preguntaEsta es mi pregunta
+                        Esta es mi preguntaEsta es mi preguntaEsta es mi pregunta
+                        Esta es mi preguntaEsta es mi pregunta?
+                </p>
+                
+            </div>
+            <div class="respuesta">
+                    <p>Esta es una repsuesta Esta es una repsuestaEsta es una repsuesta
+                            Esta es una repsuesta
+                            Esta es una repsuesta
+                            Esta es una repsuesta
+                            Esta es una repsuestaEsta es una repsuesta
+                            Esta es una repsuesta
+                    </p>
+                </div>
+            <div class="pregunta">
+                    <p>Esta es mi preguntaEsta es mi preguntaEsta es mi pregunta
+                            Esta es mi preguntaEsta es mi preguntaEsta es mi pregunta
+                            Esta es mi preguntaEsta es mi pregunta?
+                    </p>
+                
+            </div>
+            <div class="iniciarsesion"><a href="./login.html">Inicia sesión para responder</a></div>
+        </div>
+        <br>
+        <br>
+        <div id="pdfExport">
+            <input id= "redBtn" type="button" value="Cerrar Publicación">
+            <input id= "redBtn" type="button" value="Exportar a PDF">
+        </div>
 
     </div>
 
@@ -62,6 +111,26 @@
     <script src="./js/carousel.js" type="text/javascript"></script>
     <link href="./js/slick/slick.css" rel="stylesheet" type="text/css">
     <link href="./js/slick/slick-theme.css" rel="stylesheet" type="text/css">
+    <script>
+        function initMap() {
+            const uluru = {
+                lat: -34.890357,
+                lng: -56.106040099999994
+            };
+
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: uluru,
+                fullscreenControl: false
+            });
+            const marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAO1UoJKW5sKBIh1J-3uD7-4LHNVxiLx8w&callback=initMap">
+    </script>
 </body>
 
 </html>
