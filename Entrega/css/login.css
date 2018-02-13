@@ -38,6 +38,23 @@ body {
     left: 2.3em;
     top: -10px;
   }
+
+#spanFullName{
+    color: #FF3838;
+    
+}
+
+#spanEMail{
+  color: #FF3838;
+  
+}
+
+#spanPassword{
+  color: #FF3838;
+  
+}
+
+
   form input {
     display: block;
     width: 78%;
