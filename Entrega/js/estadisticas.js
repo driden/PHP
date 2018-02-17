@@ -12,17 +12,21 @@ function drawChart() {
 
     var options = {
         chart: {
-            title: 'Estadisticas por especie'
+            title: 'Estadísticas por especie'
         },
+       legend : 'center',
+        
         bars: 'vertical', // Required for Material Bar Charts.
         hAxis: { format: 'decimal' },
         height: 400,
+        width: 700,
         isStacked: true,
         series: {
             0: { color: '#ff8080' },
             1: { color: '#66ff66' }
 
         }
+        
     };
 
     var chart = new google.charts.Bar(document.getElementById('chart_div'));
