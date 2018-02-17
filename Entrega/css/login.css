@@ -54,6 +54,11 @@ body {
   
 }
 
+#spanPhoto{
+  color: #FF3838;
+  
+}
+
 
   form input {
     display: block;
@@ -88,4 +93,6 @@ body {
   form button:hover {
     background: #ff5252;
   }
+
+ 
   

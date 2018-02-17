@@ -7,7 +7,7 @@
     position: absolute;
 }
 
-#filters select {
+select {
     width: -webkit-fill-available;
     -webkit-appearance: button;
     -webkit-border-radius: 2px;
