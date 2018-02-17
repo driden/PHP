@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/login.css">
     <link href="./css/header.css" rel="stylesheet" type="text/css">
     <link href="./css/filtros.css" rel="stylesheet" type="text/css">
+    <link href="./css/registerPublication.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -54,7 +55,7 @@
             <input type="password" name="password">
             <br>
 
-            
+
             <div>
 
             </div>
@@ -64,41 +65,52 @@
                 </label>
             </div>
             <div>
-            <label>Añadir fotos
+                <label>Añadir fotos
                 </label>
                 <span id="spanPhoto">*</span>
-    
-                <input type="file" name="pic" multiple accept="image/*">
-                </div>
-                <br>
-            <div>
-                    <select name="pubType" form="filters">
-                        <option value="" disabled selected>Tipo de publicación</option>
-                        <option value="found">Encontrada</option>
-                        <option value="lost">Perdida</option>
-                    </select>
-                </div>
-                <br></br>
-                <div>
-                    <select name="pubType" form="filters">
-                        <option value="" disabled selected>Especie</option>
-                        <option value="dog">Perro</option>
-                        <option value="cat">Gato</option>
-                        <option value="parrot">Loro</option>
-                        <option value="cow">Vaca</option>
-                    </select>
-                </div>
-                <br></br>
-                <div>
-                    <select name="race" form="filters">
-                        <option value="" disabled selected>Raza</option>
-                        <option value="race1">Ovejero</option>
-                        <option value="race2">Gato siames</option>
-                        <option value="race3">Beagle</option>
-                        <option value="race4">Coco</option>
 
-                    </select>
-                </div>
+                <input type="file" name="pic" multiple accept="image/*">
+            </div>
+            <br>
+            <div>
+                <select name="pubType" form="filters">
+                    <option value="" disabled selected>Tipo de publicación</option>
+                    <option value="found">Encontrada</option>
+                    <option value="lost">Perdida</option>
+                </select>
+            </div>
+
+            <div>
+                <select name="pubType" form="filters">
+                    <option value="" disabled selected>Especie</option>
+                    <option value="dog">Perro</option>
+                    <option value="cat">Gato</option>
+                    <option value="parrot">Loro</option>
+                    <option value="cow">Vaca</option>
+                </select>
+            </div>
+
+            <div>
+                <select name="race" form="filters">
+                    <option value="" disabled selected>Raza</option>
+                    <option value="race1">Ovejero</option>
+                    <option value="race2">Gato siames</option>
+                    <option value="race3">Beagle</option>
+                    <option value="race4">Coco</option>
+
+                </select>
+
+            </div>
+            <div>
+                <select name="neighbourhood" form="filters">
+                    <option value="" disabled selected>Barrio</option>
+                    <option value="1">Carrasco Norte</option>
+                    <option value="2">Malvin</option>
+                    <option value="3">Pocitos</option>
+                    <option value="4">Centro</option>
+
+                </select>
+            </div>
             <button>Añadir publicación</button>
         </form>
     </div>
