@@ -1,13 +1,3 @@
-
-$(document).ready(function () {
-    $('p.description').each(function () {
-        let $this = $(this)
-        const text = $this.text()
-        $this.text(text.substr(0, 150) + '...')
-    }
-    )
-})
-
 function scrollFilters() {
     const offset = 0; // lo usamos depsues de que pasa el header
     const element = document.getElementById('filters');
@@ -22,4 +12,3 @@ function scrollFilters() {
 }
 
 window.setInterval(scrollFilters, 0);
-
