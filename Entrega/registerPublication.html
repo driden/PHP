@@ -7,10 +7,10 @@
     <link href="./css/header.css" rel="stylesheet" type="text/css">
     <link href="./css/filtros.css" rel="stylesheet" type="text/css">
     <link href="./css/registerPublication.css" rel="stylesheet" type="text/css">
+    <link href="./css/map.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-
     <div id="header">
         <div id="logo">
             <a href="./index.html">
@@ -111,10 +111,57 @@
 
                 </select>
             </div>
+            <div id="map">
+
+            </div>
+            <input type="hidden" name="lat" value="" id="lat">
+            <input type="hidden" name="long" value="" id="long">
             <button>Añadir publicación</button>
         </form>
     </div>
+    <script>
+        function initMap() {
+            let marker = new google.maps.Marker({
+                    position: location
+               
+                });
+            const uluru = {
+                lat: -34.890357,
+                lng: -56.106040099999994
+            };
 
+            let map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: uluru,
+                fullscreenControl: false
+            });
+
+            function placeMarker(location) {
+                marker.setMap(null);
+                marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+
+                document.getElementById("lat").setAttribute("value",location.lat().toString())
+                document.getElementById("long").setAttribute("value",location.lng().toString())
+
+                google.maps.event.addListener(map, 'click', function (event) {
+                    placeMarker(event.latLng);
+                });                
+            }
+
+            map.addListener('click', function (evt) {
+                console.log(evt);
+                const coords = evt.latLng
+                placeMarker(coords)
+            });
+        }
+
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAO1UoJKW5sKBIh1J-3uD7-4LHNVxiLx8w&callback=initMap">
+    </script>
 </body>
 
 </html>
