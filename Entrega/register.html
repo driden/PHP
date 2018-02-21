@@ -3,8 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/login.css">
     <link href="./css/header.css" rel="stylesheet" type="text/css">
+    <script src="./js/clientValidations.js" type="text/javascript"></script>
+    <link href="./css/clientValidations.css" rel="stylesheet" type="text/css">
+
+
 </head>
 
 <body>
@@ -27,23 +33,30 @@
 
             </label>
             <span id="spanEMail">*</span>
-            <input type="text" name="username">
+
+            <input id="email" type="email" name="email" class="required" placeholder="default@example.com">
+            <span class="msg error mail">You shall not pass!</span>
+            <span class="msg success mail">You can pass!</span>
             <br>
 
 
-            <label>Nombre completo
+            <label for="fullName">Nombre completo
 
             </label>
             <span id="spanFullName">*</span>
-            <input type="text" name="username">
+            <input type="text" name="fullName" id="fullName"  class="required" placeholder="Juan Pérez">
+            <span class="msg error fullName" >Ingrese nombre completo</span>
+            
+
             <br>
 
 
             <label>Contraseña
             </label>
             <span id="spanPassword">*</span>
-
-            <input type="password" name="password">
+            <input id="password" type="password" name="password" class="required">
+            <span class="msg error password">You shall not pass!</span>
+            <span class="msg success password">You can pass!</span>
             <br>
 
             <button>Confirmar</button>
