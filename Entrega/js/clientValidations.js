@@ -45,10 +45,6 @@ $(document).ready(function () {
             component.message.errorFullName.hide();
     });
 
-    $( "#failure-btn").click(function() {
-        $( "div.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
-      });
-
 
 
 })
