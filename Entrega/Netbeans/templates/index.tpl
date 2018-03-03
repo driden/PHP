@@ -7,26 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="http://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
         crossorigin="anonymous"></script>
-    <link href="./css/cards.css" rel="stylesheet" type="text/css">
-    <link href="./css/landing.css" rel="stylesheet" type="text/css">
-    <link href="./css/header.css" rel="stylesheet" type="text/css">
-    <link href="./css/paging.css" rel="stylesheet" type="text/css">
-    <link href="./css/filtros.css" rel="stylesheet" type="text/css">
-
-    
+    <link href="css/cards.css" rel="stylesheet" type="text/css">
+    <link href="css/landing.css" rel="stylesheet" type="text/css">
+    <link href="css/header.css" rel="stylesheet" type="text/css">
+    <link href="css/paging.css" rel="stylesheet" type="text/css">
+    <link href="css/filtros.css" rel="stylesheet" type="text/css">   
 
     <title>Mascotas sin hogar</title>
 
 </head>
 <body>
-    <div id="header">
-        <div id="logo">
-            <img src="./img/logo.png" alt="Logo" id="logo">
-        </div>
-        <div id="title">
-            <span>Mascotas sin hogar</span>
-        </div>
-    </div>
+    {include file="Header.tpl"}
     <div id="filters">
         <div id="mainFilterTitle">
             <span>Filtros de Búsqueda</span>
@@ -90,7 +81,7 @@
         <div id="cards">
             <div class="card">
                 <div class="cardBlock">
-                    <span class="banner lost">Se perdió {nombre} en {barrio}</span>
+                    <span class="banner lost">Se perdió {$nombre} en {$barrio}</span>
                 </div>
                 <div class="cardBlock">
                     <img class="photo" src="./img/dog.jpg">
@@ -105,7 +96,7 @@
             </div>
             <div class="card">
                 <div class="cardBlock">
-                    <span class="banner lost">Se perdió {nombre} en {barrio}</span>
+                    <span class="banner lost">Se perdió {$nombre} en {$barrio}</span>
                 </div>
                 <div class="cardBlock">
                     <img class="photo" src="./img/dog.jpg">
@@ -120,7 +111,7 @@
             </div>
             <div class="card">
                 <div class="cardBlock">
-                    <span class="banner lost">Se perdió {nombre} en {barrio}</span>
+                    <span class="banner lost">Se perdió {$nombre} en {$barrio}</span>
                 </div>
                 <div class="cardBlock">
                     <img class="photo" src="./img/dog.jpg">
@@ -135,7 +126,7 @@
             </div>
             <div class="card">
                 <div class="cardBlock">
-                    <span class="banner lost">Se perdió {nombre} en {barrio}</span>
+                    <span class="banner lost">Se perdió {$nombre} en {$barrio}</span>
                 </div>
                 <div class="cardBlock">
                     <img class="photo" src="./img/dog.jpg">
@@ -150,7 +141,7 @@
             </div>
             <div class="card">
                 <div class="cardBlock">
-                    <span class="banner lost">Se perdió {nombre} en {barrio}</span>
+                    <span class="banner lost">Se perdió {$nombre} en {$barrio}</span>
                 </div>
                 <div class="cardBlock">
                     <img class="photo" src="./img/dog.jpg">
@@ -165,7 +156,7 @@
             </div>
             <div class="card">
                 <div class="cardBlock">
-                    <span class="banner lost">Se perdió {nombre} en {barrio}</span>
+                    <span class="banner lost">Se perdió {$nombre} en {$barrio}</span>
                 </div>
                 <div class="cardBlock">
                     <img class="photo" src="./img/dog.jpg">
@@ -180,7 +171,7 @@
             </div>
             <div class="card">
                 <div class="cardBlock">
-                    <span class="banner lost">Se perdió {nombre} en {barrio}</span>
+                    <span class="banner lost">Se perdió {$nombre} en {$barrio}</span>
                 </div>
                 <div class="cardBlock">
                     <img class="photo" src="./img/dog.jpg">
@@ -195,7 +186,7 @@
             </div>
             <div class="card">
                 <div class="cardBlock">
-                    <span class="banner lost">Se perdió {nombre} en {barrio}</span>
+                    <span class="banner lost">Se perdió {$nombre} en {$barrio}</span>
                 </div>
                 <div class="cardBlock">
                     <img class="photo" src="./img/dog.jpg">
@@ -210,7 +201,7 @@
             </div>
             <div class="card">
                 <div class="cardBlock">
-                    <span class="banner lost">Se perdió {nombre} en {barrio}</span>
+                    <span class="banner lost">Se perdió {$nombre} en {$barrio}</span>
                 </div>
                 <div class="cardBlock">
                     <img class="photo" src="./img/dog.jpg">
@@ -225,7 +216,7 @@
             </div>
             <div class="card">
                 <div class="cardBlock">
-                    <span class="banner lost">Se perdió {nombre} en {barrio}</span>
+                    <span class="banner lost">Se perdió {$nombre} en {$barrio}</span>
                 </div>
                 <div class="cardBlock">
                     <img class="photo" src="./img/dog.jpg">
