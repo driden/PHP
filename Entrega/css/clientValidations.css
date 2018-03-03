@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .msg {
     display: none;
 }
@@ -8,3 +9,44 @@
     color: green;
 }
 
+=======
+/*.msg {
+    padding: 2px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    display: none;
+}
+.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    display: none;
+}
+*/
+
+.example{
+
+    margin: 15px;
+    font-size: 14px;
+    color: #656666;
+    content: "Example";
+      
+    background-color: #fff;
+    border-color: #929494;
+    border-width: 1px;
+    border-radius: 4px;
+    
+    padding: 10px 20px 10px;
+    border-style: solid;
+    }
+    
+    .form-control-feedback{
+      display: none;
+    }
+>>>>>>> 40f60d744970f0ff982127fb6de84c5d00965565
