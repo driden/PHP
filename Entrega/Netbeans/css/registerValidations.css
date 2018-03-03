@@ -24,12 +24,14 @@
     display: inline-block;
     text-align: center;
     padding: 15px 0 15px 0;
-    background-color:  #656666;
+    background-color:darkblue;
     color: white;
 }
 
 button{
     display:block;
+    color:white;
+    background-color:darkblue;
     left-margin: auto;
     right-margin: auto;
 }
