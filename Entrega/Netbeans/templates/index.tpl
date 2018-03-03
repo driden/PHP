@@ -67,17 +67,6 @@
         </div>
     </div>
     <div id="results">
-        <p align="right" id="nav">
-            <b>
-                <a href="./register.html">Registro</a>
-                |
-                <a href="./registerPublication.html">Nueva publicación</a>
-                |
-                <a href="./login.html">Iniciar sesión</a>
-                |
-                <a href="./publicaciones.html">Mis publicaciones</a>
-            </b>    
-        </p>
         <div id="cards">
             <div class="card">
                 <div class="cardBlock">
