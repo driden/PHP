@@ -1,0 +1,10 @@
+#results {
+    float: right;
+    width: 70%;
+}
+
+#cards {
+    border-style: solid;
+    border-width: 1px;
+    height: auto;
+}

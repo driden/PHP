@@ -1,0 +1,46 @@
+.card {
+    border-style: solid;
+    border-width: 1px;
+    width: 25%;
+    height: 350px;
+    margin-left: 6%;
+    margin-top: 5%;
+    display: -webkit-inline-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card img.photo {
+    height: 130px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p.description {
+    margin-top: 0px;
+    display: inherit;
+    margin: 15px 6px 0px 6px;
+}
+
+.banner {
+    width: 100%;
+    margin: 15px 0 20px 0;
+    display: inline-block;
+    text-align: center;
+    padding: 15px 0 15px 0;
+}
+
+.lost {
+    background-color: orangered;
+}
+
+.found {
+    background-color: olivedrab;
+}
+
+.cardBlock {
+    display: inline-block;
+    width: 100%;
+}
