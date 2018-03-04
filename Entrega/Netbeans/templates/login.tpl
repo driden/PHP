@@ -15,23 +15,14 @@
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
 
         <link href="./css/header.css" rel="stylesheet" type="text/css">
-        <script src="./js/registerValidations.js" type="text/javascript"></script>
-        <link href="./css/registerValidations.css" rel="stylesheet" type="text/css">
+        <script src="./js/register.js" type="text/javascript"></script>
+        <link href="./css/register.css" rel="stylesheet" type="text/css">
 
        
     </head>
 
     <body>
-        <div id="header">
-            <div id="logo">
-                <a href="./index.html">
-                    <img src="./img/logo.png" alt="Logo" id="logo">
-                </a>
-            </div>
-            <div id="title">
-                <span>Mascotas sin hogar</span>
-            </div>
-        </div>
+        {include file="Header.tpl"}
 
         <div class="col-md-4 col-md-offset-4">
             
@@ -44,7 +35,6 @@
                         <span class="form-control-feedback glyphicon glyphicon-ok"></span>
                     </div>
                 </div>
-
                         
                 <!-- Password -->
                 <div class="row">

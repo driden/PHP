@@ -1,6 +1,8 @@
 <div id="header">
     <div id="logo">
-        <img src="./img/logo.png" alt="Logo" id="logo">
+        <a href="./index.php">
+            <img src="./img/logo.png" alt="Logo" id="logo">
+        </a>
     </div>
     <div id="title">
         <span>Mascotas sin hogar</span>
@@ -11,7 +13,7 @@
             |
             <a href="./registerPublication.html">Nueva publicación</a>
             |
-            <a href="./login.html">Iniciar sesión</a>
+            <a href="./login.php">Iniciar sesión</a>
             |
             <a href="./publicaciones.html">Mis publicaciones</a>
         </b>    

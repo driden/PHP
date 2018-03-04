@@ -7,11 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="http://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
     <link href="css/cards.css" rel="stylesheet" type="text/css">
     <link href="css/landing.css" rel="stylesheet" type="text/css">
     <link href="css/header.css" rel="stylesheet" type="text/css">
     <link href="css/paging.css" rel="stylesheet" type="text/css">
-    <link href="css/filtros.css" rel="stylesheet" type="text/css">   
+    <link href="css/filtros.css" rel="stylesheet" type="text/css">
+    <link href="css/common.css" rel="stylesheet" type="text/css">
 
     <title>Mascotas sin hogar</title>
 
@@ -20,7 +23,7 @@
     {include file="Header.tpl"}
     <div id="filters">
         <div id="mainFilterTitle">
-            <span>Filtros de Búsqueda</span>
+            <span class="banner large azul">Filtros de Búsqueda</span>
         </div>
         <div id="innerFiltersDiv">
             <form action="/action_page.php">

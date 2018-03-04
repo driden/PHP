@@ -12,6 +12,7 @@
     position: relative;
     color: #333;
     border-radius: 10px;
+    margin-bottom: 15px;
   }
   form header {
     background: darkblue;
@@ -86,6 +87,7 @@
     box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.4);
     cursor: pointer;
     transition: all 0.15s ease-in-out;
+    display: unset;
   }
   form button:hover {
     background: #ff5252;

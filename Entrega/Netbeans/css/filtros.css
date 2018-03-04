@@ -2,8 +2,6 @@
     width: 29%;
     height: 600px;
     float: left;
-    border-style: solid;
-    border-width: 1px;
     position: absolute;
 }
 
@@ -47,4 +45,8 @@ select {
     text-align: -webkit-center;
     display: block;
     font-size: xx-large;
+}
+
+#filters span.banner {
+    color: #eeeeee;
 }
