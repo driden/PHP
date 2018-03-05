@@ -27,3 +27,5 @@ function getSmarty() {
     $miSmarty->assign("usuario", getSessionUser());
     return $miSmarty;
 }
+
+

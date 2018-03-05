@@ -6,7 +6,7 @@ function scrollFilters() {
     if (yOffset > 160 && yOffset < 1400) {// altura del header
         let pixels = parseInt((window.pageYOffset + offset)) 
         element.style.top = pixels+ 'px';
-        console.log(pixels);
+        
     }
     else element.style.top = '160px';
 }
