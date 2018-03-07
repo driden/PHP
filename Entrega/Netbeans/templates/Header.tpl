@@ -9,7 +9,7 @@
     </div>
     <p align="right" id="nav">
         <b>
-            <a href="./register.html">Registro</a>
+            <a href="./register.php">Registro</a>
             |
             <a href="./registerPublication.html">Nueva publicación</a>
             |
