@@ -1,8 +1,10 @@
 // Referencia: https://stackoverflow.com/questions/18746234/jquery-validate-plugin-password-check-minimum-requirements-regex
 
 $(document).ready(function () {
-
-    $.validator.addMethod("pwcheck", function (value) {
+    
+    
+    
+     $.validator.addMethod("pwcheck", function (value) {
         return /(?=.*\d)(?=.*[aA-zZ]).{8,}/.test(value);
     });
 
