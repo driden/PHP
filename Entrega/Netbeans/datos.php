@@ -1,6 +1,5 @@
 <?php
 
-require_once 'libs/Smarty.class.php';
 require_once 'class.Conexion.BD.php';
 
 function getConexion() {
