@@ -40,7 +40,7 @@ $(document).ready(function () {
             }
         },
         submitHandler: function (form) {
-            $(form).ajaxSubmit();
+            $(form).submit();
         },
         highlight: function (element, errorClass, validClass) {
             $(element).nextAll('.form-control-feedback').show().removeClass('glyphicon-ok').addClass('glyphicon-remove');
