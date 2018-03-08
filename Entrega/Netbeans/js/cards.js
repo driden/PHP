@@ -1,5 +1,5 @@
 function cargarPagina(pagina) {
-    const action = "page=" + pagina;
+    const action = `page=${pagina}`;
     $.ajax({
         url: "results.php",
         dataType: "json",
@@ -16,8 +16,6 @@ function cargarPagina(pagina) {
             const status = datos["tipo"];
             const title = datos["titulo"];
             let description = datos["descripcion"];
-            if (description.length > 150) 
-                description = description.substr(0,150) + "...";
             const id = datos["id"];
             const newCard = createCard(id,status,title,description);
             
@@ -31,6 +29,8 @@ function cargarPagina(pagina) {
 }
 
 function createCard(id, status, title, description) {
+    if (description.length > 150) 
+        description = description.substr(0,147) + "...";
     let bannerClass = status === 'P' ? 'lost' : 'found';
     let card = $('<div class="card"/>');
     let titulo =
