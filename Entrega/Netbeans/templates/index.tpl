@@ -16,8 +16,11 @@
     <link href="css/paging.css" rel="stylesheet" type="text/css">
     <link href="css/filtros.css" rel="stylesheet" type="text/css">
     <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/loader.css" rel="stylesheet" type="text/css">
     <script src="js/filters.js" type="text/javascript"></script>
     <script src="js/cards.js" type="text/javascript"></script>
+    <script src="js/pagination.js" type="text/javascript"></script>
+    
     <title>Mascotas sin hogar</title>
 
 </head>

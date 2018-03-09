@@ -1,5 +1,7 @@
 function cargarPagina(pagina) {
-    const action = `page=${pagina}`;
+    // si no se pasa una pagina se carga la 1
+    const action = pagina ? `page=${pagina}` : 'page=1';
+    
     $.ajax({
         url: "results.php",
         dataType: "json",
@@ -7,9 +9,12 @@ function cargarPagina(pagina) {
         data: action,
         timeout: 2000,
         beforeSend: function () {
-            console.log('before');
+            addLoader($('div#cards'));
         }
     }).done(function (data) {
+        
+        removeLoader();
+        
         const results = $('div#cards');
         
         data.forEach(function(datos){
@@ -42,7 +47,7 @@ function createCard(id, status, title, description) {
     let descriptionBlock = $('<div class="cardBlock"/>')
             .append('<p class="description">' + description + '</p>');
     
-    let cardId = $('<input type="text">').hide().text(id);
+    let cardId = $(`<input type="hidden" name="pubId" value="${id}">`);
 
     titulo.appendTo(card);
     imagen.appendTo(card);
@@ -51,6 +56,15 @@ function createCard(id, status, title, description) {
     return card;
 }
 
+function addLoader(container){
+    let loader = $('<div class="loader"></div>');
+    loader.appendTo(container);
+}
+
+function removeLoader(){
+    $('div.loader').remove();
+}
+
 $(function () {
-    cargarPagina(1);
+    cargarPagina();    
 });
