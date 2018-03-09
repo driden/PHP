@@ -1,5 +1,8 @@
 $(function () {
     updatePages();
+    const $cards = $('div.card');
+    if (!$cards.length)
+        cargarPagina(1);
 });
 
 function updatePages(){
@@ -13,16 +16,20 @@ function updatePages(){
     }).done(function (data) {
         
         const pagination = $('div#paging');
+        pagination.html('');
+        
         const currentPage = parseInt($('div#cards').attr("page"));
         const pages = $('<span>');
-        const firstPage = $('<a href=/Mascotas/index.php?page=1>1</a>');
+        
+        //estos links deberian disparar eventos ajax (cargarPagina)
+        const firstPage = $('<a onclick=cargarPagina(1) href="#">1</a>');
         const prevPage = currentPage > 1 ? 
-                            `<a href=${currentPage-1}>  <<  </a>` : '';
+                        `<a onclick=cargarPagina(${currentPage-1}) href="#">  <<  </a>` : '';
                             
         const nextPage = currentPage < data["total"] ?
-                            `<a href=/Mascotas/index.php?page=${currentPage+1}>  >>  </a>`: '';
+                        `<a onclick=cargarPagina(${currentPage+1}) href="#">  >>  </a>`: '';
         const currPage = `<span> ... ${currentPage} ... </span>`;
-        const lastPage = $(`<a href=/Mascotas/index.php?page=${data["total"]}>${data["total"]}</a>`);
+        const lastPage = $(`<a onclick=cargarPagina(${data["total"]}) href="#">${data["total"]}</a>`);
         
         pages
             .append(firstPage)

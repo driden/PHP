@@ -9,7 +9,9 @@ function cargarPagina(pagina) {
         data: `page=${pagina}`,
         timeout: 2000,
         beforeSend: function () {
-            addLoader($('div#cards'));
+            let cards = $('div#cards');
+            cards.html('');
+            addLoader();
         }
     }).done(function (data) {
         
@@ -27,6 +29,8 @@ function cargarPagina(pagina) {
             
             newCard.appendTo(results);
         });
+        
+        updatePages();
         
     }).fail(function () {
         $("#cards").html('<h1>Oh no</h1>');
@@ -65,7 +69,3 @@ function addLoader(container){
 function removeLoader(){
     $('div.loader').remove();
 }
-
-$(function () {
-    cargarPagina();    
-});
