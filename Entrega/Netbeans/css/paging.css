@@ -3,10 +3,12 @@
     border-width: 1px;
     height: 25px;
     margin-top: 15px;
+    display: flex;
 }
 
 #paging>span {
     float: right;
-    margin-right: 20px;
-    margin-top: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;    
 }

@@ -10,4 +10,4 @@ $barrioId = isset($_GET["barrioId"]) ? $_GET["barrioId"] : '';
 
 echo json_encode(
         getPublicationsForPage($page, $estado, $especieId, $razaId, $barrioId)
-    )["total"];
+    );

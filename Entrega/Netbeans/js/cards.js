@@ -1,12 +1,12 @@
 function cargarPagina(pagina) {
     // si no se pasa una pagina se carga la 1
-    const action = pagina ? `page=${pagina}` : 'page=1';
+    pagina = pagina || 1;
     
     $.ajax({
         url: "results.php",
         dataType: "json",
         type: "GET",
-        data: action,
+        data: `page=${pagina}`,
         timeout: 2000,
         beforeSend: function () {
             addLoader($('div#cards'));
@@ -15,7 +15,8 @@ function cargarPagina(pagina) {
         
         removeLoader();
         
-        const results = $('div#cards');
+        let results = $('div#cards');
+        results.attr('page',pagina);
         
         data.forEach(function(datos){
             const status = datos["tipo"];
