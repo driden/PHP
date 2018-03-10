@@ -6,7 +6,7 @@
             <form action="/action_page.php">
                 <div>
                     <select name="pubType" form="filters">
-                        <option value="" disabled selected>Tipo de publicación</option>
+                        <option value="" selected>Tipo de publicación</option>
                         <option value="found">Encontrada</option>
                         <option value="lost">Perdida</option>
                     </select>
@@ -14,7 +14,7 @@
                 <br></br>
                 <div>
                     <select name="especie" form="filters">
-                        <option value="" disabled selected>Especie</option>
+                        <option value="" selected>Especie</option>
                         {foreach from=$especies item=especie}
                          <option value="{$especie.id}">{$especie.nombre}</option>  
                         {/foreach}
@@ -23,7 +23,7 @@
                 <br></br>
                 <div>
                     <select name="race" form="filters">
-                        <option value="" disabled selected>Raza</option>
+                        <option value="" selected>Raza</option>
 
 
                     </select>
@@ -31,12 +31,13 @@
                 <br></br>
                 <div>
                     <select name="neighbourhood" form="filters">
-                        <option value="" disabled selected>Barrio</option>
+                        <option value="" selected>Barrio</option>
                         {foreach from=$barrios item=barrio}
                          <option value="{$barrio.id}">{$barrio.nombre}</option>  
                         {/foreach}
                     </select>
                 </div>
+                    <input type="button" onclick="cargarPagina()" class="boton" value="Buscar"/>
             </form>
         </div>
     </div>

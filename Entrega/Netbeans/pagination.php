@@ -8,5 +8,5 @@ $razaId = isset($_GET["razaId"]) ? $_GET["razaId"] : '';
 $barrioId = isset($_GET["barrioId"]) ? $_GET["barrioId"] : '';
 
 echo json_encode(
-        getCantidadPublicacionesAbiertas($foundOrLost, $specie, $race, $neighborhood)
+        getCantidadPublicacionesAbiertas($estado, $especieId, $razaId, $barrioId)
     );

@@ -3,18 +3,19 @@
 require_once 'datos.php';
 
 function getCantidadPublicacionesAbiertas($foundOrLost, $specie, $race, $neighborhood) {
-    $sqlFoundOurLost = strlen($foundOrLost) > 0 ? 'AND tipo = ' . $foundOrLost : '';
-    $sqlSpecie = strlen($specie) > 0 ? 'AND especie_id = ' . $specie : '';
-    $sqlRace = strlen($race) > 0 ? 'AND raza_id = ' . $race : '';
-    $sqlNeighborhood = strlen($neighborhood) > 0 ? 'AND barrio_id = ' . $neighborhood : '';
+    $sqlFoundOurLost = strlen($foundOrLost) > 0 ? "AND tipo = '" . $foundOrLost."' ":'';
+    $sqlSpecie = strlen($specie) > 0 ? 'AND especie_id = ' . $specie.' ' : '';
+    $sqlRace = strlen($race) > 0 ? 'AND raza_id = ' . $race.' ' : '';
+    $sqlNeighborhood = strlen($neighborhood) > 0 ? 'AND barrio_id = ' . $neighborhood.' ' : '';
 
     $con = getConexion();
-    $sql = "SELECT COUNT(*) as total FROM publicaciones WHERE abierto = 1"
+    $sql = "SELECT COUNT(*) as total FROM publicaciones WHERE abierto = 1 "
             . $sqlFoundOurLost
             . $sqlSpecie
             . $sqlRace
             . $sqlNeighborhood
     ;
+
     
     $con->consulta($sql);
     $ret = $con->siguienteRegistro();
@@ -23,13 +24,15 @@ function getCantidadPublicacionesAbiertas($foundOrLost, $specie, $race, $neighbo
 }
 
 function getPublicationsForPage($page, $foundOrLost, $specie, $race, $neighborhood) {
-    $sqlFoundOurLost = strlen($foundOrLost) > 0 ? 'AND tipo = ' . $foundOrLost : '';
-    $sqlSpecie = strlen($specie) > 0 ? 'AND especie_id = ' . $specie : '';
-    $sqlRace = strlen($race) > 0 ? 'AND raza_id = ' . $race : '';
-    $sqlNeighborhood = strlen($neighborhood) > 0 ? 'AND barrio_id = ' . $neighborhood : '';
+    $sqlFoundOurLost = strlen($foundOrLost) > 0 ? "AND tipo = '" . $foundOrLost. "' " : '';
+    $sqlSpecie = strlen($specie) > 0 ? 'AND especie_id = ' . $specie.' ' :  '';
+    $sqlRace = strlen($race) > 0 ? 'AND raza_id = ' . $race.' ' : '';
+    $sqlNeighborhood = strlen($neighborhood) > 0 ? 'AND barrio_id = ' . $neighborhood. ' ' : '';
 
     $limit = 10;    
 
+    //LIMIT 10 OFFSET 20 pagina 3
+    
     $offset = ($page - 1) * $limit;
     
     $sql = 'SELECT * FROM publicaciones
