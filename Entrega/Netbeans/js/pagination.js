@@ -1,4 +1,10 @@
 $(function () {
+
+    $('div.card').click(function () {
+        const pubId = $(this).find('input[hidden]').val();
+        window.location.replace("publicacion.php?pubId=" + pubId);
+    });
+
     updatePages();
     const $cards = $('div.card');
     if (!$cards.length)
@@ -8,7 +14,7 @@ $(function () {
 function updatePages() {
 
     const parametros = searchParameters();
-    
+
     $.ajax({
         url: "pagination.php",
         dataType: "json",

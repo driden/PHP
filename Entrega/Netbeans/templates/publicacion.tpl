@@ -5,33 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="http://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-        crossorigin="anonymous"></script>
-    <link href="./css/header.css" rel="stylesheet" type="text/css">
-    <link href="./css/cards.css" rel="stylesheet" type="text/css">
-    <link href="./css/publicacion.css" rel="stylesheet" type="text/css">
-    <link href="./css/common.css" rel="stylesheet" type="text/css">
-    <link href="./css/map.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link href="css/header.css" rel="stylesheet" type="text/css">
+    <link href="css/cards.css" rel="stylesheet" type="text/css">
+    <link href="css/publicacion.css" rel="stylesheet" type="text/css">
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/map.css" rel="stylesheet" type="text/css">
 
 
     <title>Ver publicación</title>
 </head>
 
 <body>
-    <div id="header">
-        <div id="logo">
-            <a href="./index.html">
-                <img src="./img/logo.png" alt="Logo" id="logo">
-            </a>
-        </div>
-        <div id="title">
-            <span>Mascotas sin hogar</span>
-        </div>
-    </div>
+    {include file="Header.tpl"}
     <!-- PUBLICACION -->
     <div class="publicacion border">
-
-        <div class="banner found large">Se encontro {especie}, de raza {raza} {responde al nombre de {nombre}}</div>
+        <div class="banner {if $pub.tipo == 'E'}found{else}lost{/if} large">{$pub.titulo}</div>
         <div class="margin20">
             <div id="photos">
                 <div>
@@ -54,16 +47,17 @@
         <br>
         <br>
         <div id="data">
-            <h2>Información:</h2>
+            <h2>Información:</h2>          
+            <p><span>Especie: {$pub.especie}</span></p>
+            <p><span>Raza: {$pub.raza}</span></p>
             <p>
-                <span>Datos de contacto: {telefono}</span>
+                <span>Rerportado por: {$pub.nombre} </span>
+                <span>E-mail: {$pub.email} </span>
             </p>
             <p>
-                <span>Fecha: {fecha}</span>
+                <span>Zona: {$pub.barrio}</span>
             </p>
-            <p>
-                <span>Zona: {zona}</span>
-            </p>
+            <p><span>Estado de la publicación: {$pub.estado}</span></p>
         </div>
         <br>
         <br>
@@ -119,8 +113,8 @@
     <script>
         function initMap() {
             const uluru = {
-                lat: -34.890357,
-                lng: -56.106040099999994
+                lat: {$pub.latitud},
+                lng: {$pub.longitud}
             };
 
             const map = new google.maps.Map(document.getElementById('map'), {
@@ -136,6 +130,7 @@
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAO1UoJKW5sKBIh1J-3uD7-4LHNVxiLx8w&callback=initMap">
     </script>
+
 </body>
 
 </html>

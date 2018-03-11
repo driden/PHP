@@ -30,9 +30,9 @@ function cargarPagina(pagina) {
     // si no se pasa una pagina se carga la 1
     pagina = pagina || 1;
     let params = searchParameters();
-    params.page=pagina;
+    params.page = pagina;
     const filters = queryString(params);
-    
+
     $.ajax({
         url: "results.php",
         dataType: "json",
@@ -90,6 +90,9 @@ function createCard(id, status, title, description) {
     imagen.appendTo(card);
     descriptionBlock.appendTo(card);
     cardId.appendTo(card);
+    card.click(function ( ) {
+        window.location.replace("publicacion.php?pubId=" + id);
+    });
     return card;
 }
 
