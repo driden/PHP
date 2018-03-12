@@ -79,7 +79,7 @@
                                     <div class="controlRespuesta">
                                         <input type='text' id="textoRespuesta">
                                         <br>
-                                        <button onclick="responder()">Responder</button>
+                                        <button>Responder</button>
                                     </div>
                                 {/if}
                             {/if}

@@ -1,5 +1,6 @@
 $(function () {
 
+    $('#questions').off().one('click','.controlRespuesta button', responder);
     $('input#cerrarPublicacion').click(() => {
         $('div#cerrarPubPopUp').css('display', 'block')
     });
@@ -27,18 +28,18 @@ function crearPregunta(e, respuesta){
 }
 
 
-function responder() {
+function responder(e) {
+    $(this).prop('disabled',true);
     const pregId = $(this).closest("[preguntaid]").attr("preguntaid");
     const respuesta = encodeURIComponent($(this).prevAll("input").first().val());
     const accion = `responder=${pregId}&texto=${respuesta}`;
     $.ajax({
         url: "publicacion.php",
-        dataType: "json",
         data: accion,
         type: "POST"
 
     }).done(function () {
-        crearPregunta($this,respuesta);
+        crearPregunta($(this),respuesta);
         
     }).fail(function (d) {
         console.log(d);
