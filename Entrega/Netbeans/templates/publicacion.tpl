@@ -76,10 +76,10 @@
                                         <a href="./login.html">Inicia sesión para responder</a>
                                     </div>
                                 {else}
-                                    <div id="controlRespuesta">
+                                    <div class="controlRespuesta">
                                         <input type='text' id="textoRespuesta">
                                         <br>
-                                        <input type="button" value="Responder" onclick="responder()">
+                                        <button onclick="responder()">Responder</button>
                                     </div>
                                 {/if}
                             {/if}

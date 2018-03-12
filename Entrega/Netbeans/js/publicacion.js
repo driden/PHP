@@ -14,23 +14,33 @@ $(function () {
     $('input#btnNoCerrar').click(ocultar)
 });
 
+function crearPregunta(e, respuesta){
+    let borrar = e.prevAll(".controlRespuesta");
+        let respuestaDiv = borrar.prev('.vacia');
+        // agregar respuesta y borrar los controles
+        respuestaDiv
+                .removeClass("vacia")
+                .find("p")
+                .text(respuesta);
+
+        borrar.remove();
+}
+
 
 function responder() {
-    const pregId = $('#controlRespuesta').closest("div[preguntaid]").attr("preguntaid");
-    const respuesta = encodeURIComponent($('input#textoRespuesta').val());
+    const pregId = $(this).closest("[preguntaid]").attr("preguntaid");
+    const respuesta = encodeURIComponent($(this).prevAll("input").first().val());
     const accion = `responder=${pregId}&texto=${respuesta}`;
     $.ajax({
         url: "publicacion.php",
         dataType: "json",
         data: accion,
-        type: "POST",
+        type: "POST"
 
     }).done(function () {
-        // agregar respuesta y borrar los controles
-        $('div.respuesta.vacia')
-                .find("p")
-                .removeClass("vacia")
-                .text(respuesta);
-        $('div#controlRespuesta').remove();
-    }).fail(function(d){console.log(d);});
+        crearPregunta($this,respuesta);
+        
+    }).fail(function (d) {
+        console.log(d);
+    });
 }

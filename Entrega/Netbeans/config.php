@@ -8,7 +8,8 @@ function getSessionUser() {
         return $_SESSION['usuario'];
     }
 
-    return null;
+    //return null;
+    return "lala";
 }
 
 function setSessionUser($user) {

@@ -31,11 +31,10 @@ function guardarRespuesta($id, $respuesta) {
             . ' WHERE id=:id';
 
     $params = [["respuesta", $respuesta, "string"],
-        ["id", $id, "int"]];
+        ["id", intval($id), "int"]];
 
     $con = getConexion();
     $con->consulta($sql, $params);
-    $filas = $con->cantidadRegistros();
     $con->desconectar();
     return $filas;
 }
