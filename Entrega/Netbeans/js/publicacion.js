@@ -1,6 +1,6 @@
 $(function () {
 
-    $('#questions').off().one('click','.controlRespuesta button', responder);
+    $('#questions').off().on('click','.controlRespuesta button', responder);
     $('input#cerrarPublicacion').click(() => {
         $('div#cerrarPubPopUp').css('display', 'block')
     });
@@ -16,8 +16,8 @@ $(function () {
 });
 
 function crearPregunta(e, respuesta){
-    let borrar = e.prevAll(".controlRespuesta");
-        let respuestaDiv = borrar.prev('.vacia');
+    let borrar = e.parent();
+        let respuestaDiv = borrar.prevAll('.vacia');
         // agregar respuesta y borrar los controles
         respuestaDiv
                 .removeClass("vacia")
@@ -29,6 +29,7 @@ function crearPregunta(e, respuesta){
 
 
 function responder(e) {
+    const elemento = $(this);
     $(this).prop('disabled',true);
     const pregId = $(this).closest("[preguntaid]").attr("preguntaid");
     const respuesta = encodeURIComponent($(this).prevAll("input").first().val());
@@ -39,7 +40,7 @@ function responder(e) {
         type: "POST"
 
     }).done(function () {
-        crearPregunta($(this),respuesta);
+        crearPregunta(elemento,decodeURIComponent(respuesta));
         
     }).fail(function (d) {
         console.log(d);
