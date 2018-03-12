@@ -3,17 +3,69 @@
 require_once 'config.php';
 require_once 'datos.php';
 
-$smarty = getSmarty();
-if (isset($_GET["pubId"])) {
-    $pubId = $_GET["pubId"];
+if (isset($_POST["responder"])) {
+    $pregId = $_POST["responder"];
+    $respuesta = $_POST["texto"];
+
+    guardarRespuesta($pregId, $respuesta);
+} else {
+    if (isset($_GET["pubId"])) {
+        $smarty = getSmarty();
+        $pubId = $_GET["pubId"];
+
+        $pub = getDatosPublicacion($pubId);
+        $smarty->assign('pub', $pub);
+
+        $preguntas = getPreguntasYRespuestas($pubId);
+        $smarty->assign('qa', $preguntas);
+
+        $smarty->display("publicacion.tpl");
+    } else {
+        header("location:index.php");
+    }
+}
+
+function guardarRespuesta($id, $respuesta) {
+    $sql = 'UPDATE preguntas '
+            . 'SET respuesta = :respuesta'
+            . ' WHERE id=:id';
+
+    $params = [["respuesta", $respuesta, "string"],
+        ["id", $id, "int"]];
+
+    $con = getConexion();
+    $con->consulta($sql, $params);
+    $filas = $con->cantidadRegistros();
+    $con->desconectar();
+    return $filas;
+}
+
+function getPreguntasYRespuestas($pubId) {
+    $sql = 'SELECT
+id,
+p.texto as pregunta,
+respuesta
+from preguntas p
+WHERE id_publicacion = :pid';
+    $param = [["pid", $pubId, "int"]];
+    $con = getConexion();
+    $con->consulta($sql, $param);
+    $res = $con->restantesRegistros();
+    $con->desconectar();
+    return $res;
+}
+
+function getDatosPublicacion($pubId) {
     $sql = 'SELECT
 p.id,
 p.titulo,
-CASE p.exitoso
-WHEN NULL THEN "No cerrado"
-WHEN 0 THEN "Sin exito"
-WHEN 1 THEN "Exitoso"
-END as estado,
+(
+    CASE p.exitoso
+    WHEN 0 THEN  "Sin exito"
+    WHEN 1 THEN  "Exitoso"
+    ELSE "No cerrado"
+    END
+) as estado,
 p.tipo,
 e.nombre as especie,
 r.nombre as raza,
@@ -44,8 +96,5 @@ WHERE p.id=:pid';
     $pub = $con->restantesRegistros();
     $pub = $pub[0];
     $con->desconectar();
-    $smarty->assign('pub', $pub);
-    $smarty->display("publicacion.tpl");
-} else {
-    header("location:index.php");
+    return $pub;
 }
