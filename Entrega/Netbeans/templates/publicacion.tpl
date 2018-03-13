@@ -76,11 +76,20 @@
                                         <a href="./login.html">Inicia sesión para responder</a>
                                     </div>
                                 {else}
-                                    <div class="controlRespuesta">
-                                        <input type='text' id="textoRespuesta">
-                                        <br>
-                                        <button>Responder</button>
-                                    </div>
+                                    {if ($usuario.id === $p.usuarioId)}
+                                        <div class="controlRespuesta">
+                                            <input type='text' id="textoRespuesta">
+                                            <br>
+                                            <button>Responder</button>
+                                        </div>
+                                    {else}
+                                        {/*aca va la logica para que el usuario no dueño de la publicacion pueda crear preguntas*/}
+                                        <div class="controlPregunta">
+                                            <input type='text' id="textoPregunta">
+                                            <br>
+                                            <button>Preguntar</button>
+                                        </div>
+                                    {/if}
                                 {/if}
                             {/if}
                         </div>

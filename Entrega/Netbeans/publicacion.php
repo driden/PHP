@@ -75,6 +75,7 @@ WHEN 0 THEN "Cerrado"
 END as abierto,
 u.nombre,
 u.email,
+u.id as idUsuario,
 p.latitud,
 p.longitud
 
