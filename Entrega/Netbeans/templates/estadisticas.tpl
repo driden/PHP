@@ -35,7 +35,8 @@
             <div class="banner large azul">Estadísticas</div>
             <div>
                 <div id="publicaciones">
-                    <div id="chart_div"></div>
+                    <div id="abiertosVsCerrados"></div>
+                    <div id="exitoVsNoExito"></div>
                 </div>
             </div>
         </div>
