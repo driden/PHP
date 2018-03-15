@@ -13,10 +13,15 @@ $(document).ready(function () {
         rules: {
             email: {
                 required: true,
-                mailCheck: true
-            },
-            fullName: {
-                required: true
+                mailCheck: true,
+                remote: {
+                    data: {
+                        checkMail: function(){
+                            return $("#email").val();
+                    }},
+                    type: "POST",
+                    url: "login.php"
+                }
             },
             password: {
                 required: true,
@@ -26,19 +31,17 @@ $(document).ready(function () {
         messages: {
             email: {
                 required: "El campo de email es requerido",
-                mailCheck: "Proporciona un email válido"
-            },
-            fullName: {
-                required: "Su nombre es un campo requerido"
+                mailCheck: "Proporciona un email válido",
+                remote: "El usuario no existe en la BD"
             },
             password: {
                 required: "El password es un campo requerido",
                 pwcheck: "La contraseña debe tener al menos 8 caracteres, una letra y 1 número"
             }
         },
-        submitHandler: function (form) {
-            $(form).submit();
-        },
+//        submitHandler: function (form) {
+//            $(form).submit();
+//        },
         highlight: function (element, errorClass, validClass) {
             $(element).nextAll('.form-control-feedback').show().removeClass('glyphicon-ok').addClass('glyphicon-remove');
             $(element).addClass(errorClass).removeClass(validClass);
@@ -50,4 +53,7 @@ $(document).ready(function () {
             $(element).remove();
         }
     });
+    
+    if( $('#user-form').valid())
+        $('#user-form').submit();
 });
