@@ -16,6 +16,8 @@
             <a href="./login.php">Iniciar sesión</a>
             |
             <a href="./publicaciones.html">Mis publicaciones</a>
+            |
+            <a href="./estadisticas.php">Estadísticas</a>
         </b>    
     </p>
 </div>

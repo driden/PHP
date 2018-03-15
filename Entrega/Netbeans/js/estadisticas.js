@@ -1,9 +1,25 @@
+$(document).ready(function(){
+  let datos = [];
+  $("div.dato").each(function(){
+      let obj = {};
+      
+      obj.nombre = $(this).find('input[data=nombre]').val();
+      obj.total = $(this).find('input[data=total]').val();
+      obj.abiertos = $(this).find('input[data=abiertos]').val();
+      obj.cerrados = $(this).find('input[data=cerrados]').val();
+      obj.positivos = $(this).find('input[data=positivos]').val();
+      datos.push(obj);
+  });
+  
+  console.log(datos);
+});
+
 google.charts.load('current', { 'packages': ['bar'] });
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
     var data = google.visualization.arrayToDataTable([
-        ['Especie', 'Desfavorable', { role: 'annotation' }, 'Favorable', { role: 'annotation' }],
+        ['Especie', 'No exitoso', { role: 'annotation' }, 'Exitoso', { role: 'annotation' }],
         ['Perro', 1000, 0, 400, 1],
         ['Gato', 1170, 0, 460, 1],
         ['Loro', 660, 0, 1120, 1]
