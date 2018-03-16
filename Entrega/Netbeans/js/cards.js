@@ -91,7 +91,8 @@ function createCard(id, status, title, description) {
     descriptionBlock.appendTo(card);
     cardId.appendTo(card);
     card.click(function ( ) {
-        window.location.replace("publicacion.php?pubId=" + id);
+        const link = "publicacion.php?pubId=" + id;
+        const newTab = window.open(link, "_blank");
     });
     return card;
 }
