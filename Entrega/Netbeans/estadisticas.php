@@ -2,6 +2,12 @@
 
 require_once 'config.php';
 require_once 'datos.php';
+
+if (getSessionUser() == $null){
+    header("location:index.php");
+    die();
+}
+
 $smarty = getSmarty();
 
 $con = getConexion();

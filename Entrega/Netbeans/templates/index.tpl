@@ -25,7 +25,7 @@
 
 </head>
 <body>
-    {include file="Header.tpl"}
+    {include file="Header.tpl" usuario=$usuario}
     {include file="searchFilters.tpl" barrios=$barrios especies=$especies}
     {include file="results.tpl"}
     <script src="./js/scrollFilters.js"></script>

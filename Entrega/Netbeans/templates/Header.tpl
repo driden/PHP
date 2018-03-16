@@ -9,15 +9,19 @@
     </div>
     <p align="right" id="nav">
         <b>
-            <a href="./register.php">Registro</a>
-            |
-            <a href="./registerPublication.html">Nueva publicación</a>
-            |
-            <a href="./login.php">Iniciar sesión</a>
-            |
-            <a href="./publicaciones.html">Mis publicaciones</a>
-            |
-            <a href="./estadisticas.php">Estadísticas</a>
+            {if isset($usuario)}
+                <a href="./registerPublication.php">Nueva publicación</a>
+                |
+                <a href="./publicaciones.php">Mis publicaciones</a>
+                |
+                <a href="./estadisticas.php">Estadísticas</a>
+                |
+                <a href="./logout.php">Log out</a>            
+            {else}
+                <a href="./register.php">Registro</a>
+                |
+                <a href="./login.php">Iniciar sesión</a>
+            {/if}
         </b>    
     </p>
 </div>
