@@ -63,27 +63,32 @@
             <br>
             <div id="questions">
                 <h2>Preguntas y Respuestas:</h2>
+                {*Por cada pregunta hecha $p*}
                 {foreach $qa as $p}
-                    {if isset($p) && count($p) > 0}
+                    {if isset($p) && count($p) > 0} 
                         <div preguntaid = "{$p.id}">
                             <div class="pregunta"><p>{$p.pregunta}</p></div>
-                                    {if isset($p.respuesta)}
+                            {if isset($p.respuesta)}
                                 <div class="respuesta"><p>{$p.respuesta}</p></div>
-                                    {else}
+                            {else}
+                                {*si la pregunta no tiene respuesta todavia, 
+                                    se crea un contenedor para la respuesta*}
                                 <div class="respuesta vacia"><p></p></div>
-                                        {if !isset($usuario)}
+                                {if !isset($usuario)}
                                     <div class="iniciarsesion">
-                                        <a href="./login.html">Inicia sesión para responder</a>
+                                        <a href="./login.php">Inicia sesión para responder</a>
                                     </div>
                                 {else}
                                     {if ($usuario.id === $p.usuarioId)}
+                                        {*si hay una respuesta vacia y el usuario que creo la publicacion
+                                        es el que esta loguead, entonces puede responder*}
                                         <div class="controlRespuesta">
                                             <input type='text' id="textoRespuesta">
                                             <br>
                                             <button>Responder</button>
                                         </div>
                                     {else}
-                                        {/*aca va la logica para que el usuario no dueño de la publicacion pueda crear preguntas*/}
+                                        {*si el usuario es un "visitante" puede hacer una pregunta si quiere*}
                                         <div class="controlPregunta">
                                             <input type='text' id="textoPregunta">
                                             <br>
@@ -94,10 +99,18 @@
                             {/if}
                         </div>
                     {else}
+                        {*No deberia entrar aca, por las dudas*}
                         No hay preguntas hechas.
                     {/if}
+
+                    {*NO HAY PREGUNTAS HECHAS EN ESTE PUNTO, pero se pueden hacer nuevas :)*}
                 {foreachelse}
-                    No hay preguntas hechas.
+                    <span class="no-preguntas">No hay preguntas hechas.</span>
+                    <div class="controlPregunta">
+                        <input type='text' id="textoPregunta">
+                        <br>
+                        <button>Preguntar</button>
+                    </div>
                 {/foreach}
             </div>            
 

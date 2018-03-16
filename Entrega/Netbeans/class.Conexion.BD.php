@@ -88,7 +88,8 @@ class ConexionBD
 					
 				}
 				//paso los parámetros para que sean filtrados antes de incluirlos en la SQL
-				$this->sentencia->bindParam($parametro[0], $parametro[1], $tipo, $parametro[3]);
+				//$this->sentencia->bindParam($parametro[0], $parametro[1], $tipo, $parametro[3]);
+                                $this->sentencia->bindParam($parametro[0], $parametro[1], $tipo);
 			}
 			$this->sentencia->execute();
 			$retorno = true;

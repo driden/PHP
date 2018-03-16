@@ -8,21 +8,24 @@ if (isset($_POST["responder"])) {
     $respuesta = $_POST["texto"];
 
     guardarRespuesta($pregId, $respuesta);
+} elseif (isset($_POST["preguntar"])) {
+    $pregunta = $_POST["preguntar"];
+    $pubId = $_POST["pubId"];
+
+    guardarPregunta($pubId, $pregunta);
+} elseif (isset($_GET["pubId"])) {
+    $smarty = getSmarty();
+    $pubId = $_GET["pubId"];
+
+    $pub = getDatosPublicacion($pubId);
+    $smarty->assign('pub', $pub);
+
+    $preguntas = getPreguntasYRespuestas($pubId);
+    $smarty->assign('qa', $preguntas);
+
+    $smarty->display("publicacion.tpl");
 } else {
-    if (isset($_GET["pubId"])) {
-        $smarty = getSmarty();
-        $pubId = $_GET["pubId"];
-
-        $pub = getDatosPublicacion($pubId);
-        $smarty->assign('pub', $pub);
-
-        $preguntas = getPreguntasYRespuestas($pubId);
-        $smarty->assign('qa', $preguntas);
-
-        $smarty->display("publicacion.tpl");
-    } else {
-        header("location:index.php");
-    }
+    header("location:index.php");
 }
 
 function guardarRespuesta($id, $respuesta) {
@@ -37,6 +40,22 @@ function guardarRespuesta($id, $respuesta) {
     $con->consulta($sql, $params);
     $con->desconectar();
     return $filas;
+}
+
+function guardarPregunta($pubId, $pregunta) {
+
+    $userId = getSessionUser()["id"];
+    $sql = "INSERT INTO preguntas(`id_publicacion`,`texto`,`usuario_id`) VALUES (:pubId, :pregunta, :userId)";
+
+    $params = [
+        ["pubId", $pubId, "int"],
+        ["pregunta", $pregunta, "string"],
+        ["userId", $userId, "int"]
+    ];
+
+    $con = getConexion();
+    $con->consulta($sql, $params);
+    $con->desconectar();
 }
 
 function getPreguntasYRespuestas($pubId) {
