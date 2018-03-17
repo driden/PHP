@@ -26,21 +26,28 @@
             <div class="banner {if $pub.tipo == 'E'}found{else}lost{/if} large">{$pub.titulo}</div>
             <div class="margin20">
                 <div id="photos">
-                    <div>
-                        <img src="./img/publicacion/dog1.jpg" alt="dog1">
+                    {foreach  $fotos as $foto }
+                        <div>
+                            <img src="{$foto}" alt="{$foto}">
+                        </div>
+                    {foreachelse}
+                        <h2>No hay fotos </h2>
+                    {/foreach}
+                    {*<div>
+                    <img src="./img/publicacion/dog1.jpg" alt="dog1">
                     </div>
                     <div>
-                        <img src="./img/publicacion/dog2.jpeg" alt="dog2">
+                    <img src="./img/publicacion/dog2.jpeg" alt="dog2">
                     </div>
                     <div>
-                        <img src="./img/publicacion/dog3.jpeg" alt="dog3">
+                    <img src="./img/publicacion/dog3.jpeg" alt="dog3">
                     </div>
                     <div>
-                        <img src="./img/publicacion/dog4.jpeg" alt="dog4">
+                    <img src="./img/publicacion/dog4.jpeg" alt="dog4">
                     </div>
                     <div>
-                        <img src="./img/publicacion/dog5.jpg" alt="dog5">
-                    </div>
+                    <img src="./img/publicacion/dog5.jpg" alt="dog5">
+                    </div>*}
                 </div>
             </div>
             <br>
@@ -68,13 +75,13 @@
                     {if isset($p) && count($p) > 0} 
                         <div preguntaid = "{$p.id}">
                             <div class="pregunta"><p>{$p.pregunta}</p></div>
-                            {if isset($p.respuesta)}
+                                    {if isset($p.respuesta)}
                                 <div class="respuesta"><p>{$p.respuesta}</p></div>
-                            {else}
-                                {*si la pregunta no tiene respuesta todavia, 
-                                    se crea un contenedor para la respuesta*}
+                                    {else}
+                                        {*si la pregunta no tiene respuesta todavia, 
+                                        se crea un contenedor para la respuesta*}
                                 <div class="respuesta vacia"><p></p></div>
-                                {if !isset($usuario)}
+                                        {if !isset($usuario)}
                                     <div class="iniciarsesion">
                                         <a href="./login.php">Inicia sesión para responder</a>
                                     </div>

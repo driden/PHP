@@ -30,7 +30,7 @@
     <body>
         {include file="Header.tpl" usuario=$usuario}
         <div id="formContainer">
-            <form action="newPublication.php" method="post" enctype="multipart/form-data">
+            <form action="newPublication.php" method="post" enctype="multipart/form-data" id="publicar">
                 <span class="banner azul large">Registro de publicación</span>
                 {if !isset($usuario)}
                     <div>
@@ -54,30 +54,34 @@
                     </div>
                 {/if}
 
-
-                <div></div>
                 <div>
                     <label id="myData">
                         <h3>Datos de la mascota</h3>
                     </label>
                 </div>
+                 <div>
+                    <label for="title" id="titulo">Titulo:</label>
+                    <input type="text" name="title">
+                </div>
+                <div>
+                    <label for="description" id="description">Descripcion:</label>
+                    <input type="text" name="description">
+                </div>
                 <div>
                     <label>Añadir fotos</label>
                     <span id="spanPhoto">*</span>
-
                     <input type="file" name="pic[]" multiple accept="image/*">
                 </div>
                 <br>
                 <div>
-                    <select name="pubType" form="filters">
-                        <option value="" disabled selected>Tipo de publicación</option>
+                    <select name="pubType" form="publicar">
                         <option value="found">Encontrada</option>
                         <option value="lost">Perdida</option>
                     </select>
                 </div>
 
                 <div>
-                    <select name="especie" form="filters">
+                    <select name="especie" fron="publicar">
                         <option value="" selected>Especie</option>
                         {foreach from=$especies item=especie}
                             <option value="{$especie.id}">{$especie.nombre}</option>  
@@ -86,12 +90,12 @@
                 </div>
 
                 <div>
-                    <select name="race" form="filters">
+                    <select name="race" form="publicar">
                         <option value="" selected>Raza</option>
                     </select>
                 </div>
                 <div>
-                    <select name="neighbourhood" form="filters">
+                    <select name="neighbourhood" form="publicar">
                         <option value="" selected>Barrio</option>
                         {foreach from=$barrios item=barrio}
                             <option value="{$barrio.id}">{$barrio.nombre}</option>  

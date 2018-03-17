@@ -23,6 +23,8 @@ if (isset($_POST["responder"])) {
     $preguntas = getPreguntasYRespuestas($pubId);
     $smarty->assign('qa', $preguntas);
 
+    $fotos = getFotos($pubId);
+    $smarty->assign("fotos",$fotos);
     $smarty->display("publicacion.tpl");
 } else {
     header("location:index.php");
@@ -116,4 +118,20 @@ WHERE p.id=:pid';
     $pub = $pub[0];
     $con->desconectar();
     return $pub;
+}
+
+function getFotos($pubId) {
+    $fotos = [];
+    $dir = "imgs/{$pubId}/";
+
+    if ($handle = opendir($dir)) {
+        while (false !== ($entry = readdir($handle))) {
+            if ($entry != "." && $entry != "..") {
+                $fotos[] = $dir . $entry;
+            }
+        }
+        closedir($handle);
+    }
+    
+    return $fotos;
 }
