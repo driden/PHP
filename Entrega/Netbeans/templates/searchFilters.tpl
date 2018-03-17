@@ -24,8 +24,6 @@
                 <div>
                     <select name="race" form="filters">
                         <option value="" selected>Raza</option>
-
-
                     </select>
                 </div>
                 <br></br>

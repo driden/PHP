@@ -12,7 +12,7 @@
             {if isset($usuario)}
                 <span>Hola {$usuario.nombre}!</span>
                 |                
-                <a href="./registerPublication.php">Nueva publicación</a>
+                <a href="./newPublication.php">Nueva publicación</a>
                 |
                 <a href="./publicaciones.php">Mis publicaciones</a>
                 |
