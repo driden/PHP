@@ -33,21 +33,6 @@
                     {foreachelse}
                         <h2>No hay fotos </h2>
                     {/foreach}
-                    {*<div>
-                    <img src="./img/publicacion/dog1.jpg" alt="dog1">
-                    </div>
-                    <div>
-                    <img src="./img/publicacion/dog2.jpeg" alt="dog2">
-                    </div>
-                    <div>
-                    <img src="./img/publicacion/dog3.jpeg" alt="dog3">
-                    </div>
-                    <div>
-                    <img src="./img/publicacion/dog4.jpeg" alt="dog4">
-                    </div>
-                    <div>
-                    <img src="./img/publicacion/dog5.jpg" alt="dog5">
-                    </div>*}
                 </div>
             </div>
             <br>
@@ -130,12 +115,19 @@
         </div>
     </div>
     <div id="cerrarPubPopUp" class="popup card border">
-        <div class="banner found">
+        <div class="banner {if $pub.tipo == 'E'}found{else}lost{/if}">
             <span>Querés cerrar esta publicación?</span>
         </div>
         <div class="controls">
-            <input id="btnCerrar" class="red" type="button" value="Si">
-            <input id="btnNoCerrar" class="red" type="button" value="No">
+            <form action="publicacion.php" method="post" id="cerrarPub">
+                <select name="exitoso" form="cerrarPub">
+                    <option value="1">Exitoso</option>
+                    <option value="0">Sin Éxito </option>
+                </select>
+                <input id="btnCerrar" class="red" type="submit" value="Si" name="cerrar">
+                <input id="btnNoCerrar" class="red" type="button" value="No">
+                <input type="hidden" value="{$pub.id}" name="pubId">
+            </form>
         </div>
     </div>
 

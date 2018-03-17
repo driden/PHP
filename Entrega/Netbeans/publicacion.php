@@ -13,7 +13,24 @@ if (isset($_POST["responder"])) {
     $pubId = $_POST["pubId"];
 
     guardarPregunta($pubId, $pregunta);
-} elseif (isset($_GET["pubId"])) {
+    
+}elseif ($_POST["cerrar"]) {
+    //cerrar la publicacion
+    $pubId = $_POST["pubId"];
+    $exitoso = $_POST["exitoso"];
+    
+    $sqlCerrar = "UPDATE publicaciones SET abierto=0, exitoso= :exitoso WHERE id = :id";
+    $paramCerrar = [
+        ["exitoso", $exitoso,"int"],
+        ["id", $pubId, "int"]
+    ];
+    
+    $c = getConexion();
+    $c->consulta($sqlCerrar,$paramCerrar);
+   
+    header("location:index.php");
+} 
+elseif (isset($_GET["pubId"])) {
     $smarty = getSmarty();
     $pubId = $_GET["pubId"];
 
