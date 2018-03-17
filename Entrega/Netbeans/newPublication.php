@@ -47,6 +47,8 @@ if (isset($_POST["newPub"])) {
 
     // ya tengo el Id, puedo guardar las fotos
     guardarFotos($pubId);
+    
+    header('location:publicacion.php?pubId='.$pubId);
 }
 
 $smarty = getSmarty();
