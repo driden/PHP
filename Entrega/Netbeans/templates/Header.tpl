@@ -14,7 +14,7 @@
                 |                
                 <a href="./newPublication.php">Nueva publicación</a>
                 |
-                <a href="./publicaciones.php">Mis publicaciones</a>
+                <a href="./misPublicaciones.php">Mis publicaciones</a>
                 |
                 <a href="./estadisticas.php">Estadísticas</a>
                 |

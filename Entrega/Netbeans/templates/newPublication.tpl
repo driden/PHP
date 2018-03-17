@@ -21,7 +21,7 @@
         <link href="./css/map.css" rel="stylesheet" type="text/css">
         <link href="./css/common.css" rel="stylesheet" type="text/css">
         <link href="./css/newPublication.css" rel="stylesheet" type="text/css">
-        
+        <title>Nueva Publicación</title>
         <script type="text/javascript">
             console.log({$error});
             </script>

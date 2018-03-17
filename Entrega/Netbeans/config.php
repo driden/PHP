@@ -20,18 +20,18 @@ function setSessionUser($user) {
 
 function getSmarty() {
 
-    //logueo a ana
-    if (is_null(getSessionUser())) {
-        $email = "agonzalez@otro.com";
-        $sql = "SELECT * FROM usuarios WHERE email=:mail";
-        $con = getConexion();
-
-        $con->consulta($sql, [["mail", $email, "string"]]);
-        $res = $con->restantesRegistros();
-        $res = $res[0];
-
-        setSessionUser($res);
-    }
+//    //logueo a ana
+//    if (is_null(getSessionUser())) {
+//        $email = "agonzalez@otro.com";
+//        $sql = "SELECT * FROM usuarios WHERE email=:mail";
+//        $con = getConexion();
+//
+//        $con->consulta($sql, [["mail", $email, "string"]]);
+//        $res = $con->restantesRegistros();
+//        $res = $res[0];
+//
+//        setSessionUser($res);
+//    }
 
     $miSmarty = new Smarty();
     $miSmarty->template_dir = "templates";

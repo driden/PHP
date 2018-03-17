@@ -14,7 +14,7 @@ if (isset($_POST["responder"])) {
 
     guardarPregunta($pubId, $pregunta);
     
-}elseif ($_POST["cerrar"]) {
+}elseif (isset($_POST["cerrar"])) {
     //cerrar la publicacion
     $pubId = $_POST["pubId"];
     $exitoso = $_POST["exitoso"];
@@ -81,7 +81,8 @@ function getPreguntasYRespuestas($pubId) {
     $sql = 'SELECT
 id,
 p.texto as pregunta,
-respuesta
+respuesta,
+usuario_id as idUsuario
 from preguntas p
 WHERE id_publicacion = :pid';
     $param = [["pid", $pubId, "int"]];
@@ -140,7 +141,9 @@ WHERE p.id=:pid';
 function getFotos($pubId) {
     $fotos = [];
     $dir = "imgs/{$pubId}/";
-
+    
+    if(!is_dir($dir)) return $fotos;
+    
     if ($handle = opendir($dir)) {
         while (false !== ($entry = readdir($handle))) {
             if ($entry != "." && $entry != "..") {

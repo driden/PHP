@@ -57,60 +57,51 @@
                 <h2>Preguntas y Respuestas:</h2>
                 {*Por cada pregunta hecha $p*}
                 {foreach $qa as $p}
-                    {if isset($p) && count($p) > 0} 
-                        <div preguntaid = "{$p.id}">
-                            <div class="pregunta"><p>{$p.pregunta}</p></div>
-                                    {if isset($p.respuesta)}
-                                <div class="respuesta"><p>{$p.respuesta}</p></div>
-                                    {else}
-                                        {*si la pregunta no tiene respuesta todavia, 
-                                        se crea un contenedor para la respuesta*}
-                                <div class="respuesta vacia"><p></p></div>
-                                        {if !isset($usuario)}
-                                    <div class="iniciarsesion">
-                                        <a href="./login.php">Inicia sesión para responder</a>
-                                    </div>
-                                {else}
-                                    {if ($usuario.id === $p.usuarioId)}
-                                        {*si hay una respuesta vacia y el usuario que creo la publicacion
-                                        es el que esta loguead, entonces puede responder*}
-                                        <div class="controlRespuesta">
-                                            <input type='text' id="textoRespuesta">
-                                            <br>
-                                            <button>Responder</button>
-                                        </div>
-                                    {else}
-                                        {*si el usuario es un "visitante" puede hacer una pregunta si quiere*}
-                                        <div class="controlPregunta">
-                                            <input type='text' id="textoPregunta">
-                                            <br>
-                                            <button>Preguntar</button>
-                                        </div>
-                                    {/if}
-                                {/if}
-                            {/if}
-                        </div>
-                    {else}
-                        {*No deberia entrar aca, por las dudas*}
-                        No hay preguntas hechas.
-                    {/if}
+                    {*  {if isset($p) && count($p) > 0} *}
+                    <div preguntaid = "{$p.id}">
+                        <div class="pregunta"><p>{$p.pregunta}</p></div>
+                                {if isset($p.respuesta)}
+                            <div class="respuesta"><p>{$p.respuesta}</p></div>
+                                {else}                            
+                                    {*si la pregunta no tiene respuesta todavia, 
+                                    se crea un contenedor para la respuesta*}
+                            <div class="respuesta vacia"><p></p></div>
+                                    {if not isset($usuario)}
+                                <div class="iniciarsesion">
+                                    <a href="./login.php">Inicia sesión para responder</a>
+                                </div>
+                            {elseif $usuario.id eq $pub.idUsuario}
+                                {*si hay una respuesta vacia y el usuario que creo la publicacion
+                                es el que esta loguead, entonces puede responder*}
+                                <div class="controlRespuesta">
+                                    <input type='text' id="textoRespuesta">
+                                    <br>
+                                    <button>Responder</button>
+                                </div>
 
+                            {/if}
+                        {/if}
+                    </div>
                     {*NO HAY PREGUNTAS HECHAS EN ESTE PUNTO, pero se pueden hacer nuevas :)*}
                 {foreachelse}
                     <span class="no-preguntas">No hay preguntas hechas.</span>
+
+                {/foreach}
+                {if isset($usuario) and ($usuario.id neq $pub.idUsuario)}
                     <div class="controlPregunta">
                         <input type='text' id="textoPregunta">
                         <br>
-                        <button>Preguntar</button>
+                        <button>Nueva Pregunta</button>
                     </div>
-                {/foreach}
-            </div>            
-
+                {/if}
+            </div>
         </div>
         <br>
         <br>
         <div id="pdfExport">
-            <input id="cerrarPublicacion" class="red" type="button" value="Cerrar Publicación">
+            {if isset($usuario) and ($usuario.id eq $pub.idUsuario)}
+                <input id="cerrarPublicacion" class="red" type="button" value="Cerrar Publicación">
+            {/if}
             <input id="exportarPDF" class="red" type="button" value="Exportar a PDF">
         </div>
     </div>
@@ -124,6 +115,7 @@
                     <option value="1">Exitoso</option>
                     <option value="0">Sin Éxito </option>
                 </select>
+                <br>
                 <input id="btnCerrar" class="red" type="submit" value="Si" name="cerrar">
                 <input id="btnNoCerrar" class="red" type="button" value="No">
                 <input type="hidden" value="{$pub.id}" name="pubId">

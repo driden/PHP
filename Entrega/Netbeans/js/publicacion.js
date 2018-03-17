@@ -1,7 +1,8 @@
 $(function () {
 
-    $('#questions').off().on('click', '.controlRespuesta button', responder);
-    $('#questions').off().on('click', '.controlPregunta button', preguntar);
+    $('#questions').off()
+            .on('click', '.controlRespuesta button', responder)
+            .on('click', '.controlPregunta button', preguntar);
     $('input#cerrarPublicacion').click(() => {
         $('div#cerrarPubPopUp').css('display', 'block')
     });
