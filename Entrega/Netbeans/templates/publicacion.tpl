@@ -39,10 +39,11 @@
             <br>
             <div id="data">
                 <div>
-                    <h2>Información:</h2>          
+                    <h2>Información:</h2>    
+                    <p><span>Tipo: </span> {if $pub.tipo eq 'E'}Encontrado{else}Perdido{/if}</p>
                     <p><span>Especie: </span> {$pub.especie}</p>
                     <p><span>Raza: </span>{$pub.raza}</p>
-                    <p><span>Rerportado por: </span>{$pub.nombre} ({$pub.email})</p>
+                    <p><span>Reportado por: </span>{$pub.nombre} ({$pub.email})</p>
                     <p><span>Zona: </span>{$pub.barrio}</p>
                     <p><span>Estado de la publicación: </span>{$pub.estado}</p>
                 </div>

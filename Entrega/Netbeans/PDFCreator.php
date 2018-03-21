@@ -134,7 +134,7 @@ WHERE p.id=:pid';
 
 }
 
-$pubId = 1005;
+$pubId = $_GET["pubId"];
 $pdf = new PDF();
 $pub = $pdf->getDatosPublicacion($pubId);
 $title = 'MASCOTAS SIN HOGAR';

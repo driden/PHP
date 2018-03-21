@@ -14,6 +14,12 @@ $(function () {
 
 
     $('input#btnNoCerrar').click(ocultar)
+
+    $('#exportarPDF').click(function () {
+        const pubId = parseInt(GetParameterValues("pubId"));
+        const accion = 'pubId='+pubId;
+        window.location.href = "PDFCreator.php?"+accion;
+    })
 });
 
 function crearPregunta(e, respuesta) {

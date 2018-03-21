@@ -1,9 +1,0 @@
-div#chart_div > div {
-    position: relative;
-    width: 700px;
-    height: 400px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 45px;
-    margin-bottom: 45px;
-}

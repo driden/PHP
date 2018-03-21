@@ -21,7 +21,7 @@
 <body>
     {include file="Header.tpl" usuario=$usuario}
     <div class="publicacion border">
-        <div class="banner large azul">Mis publicaciones abiertas</div>
+        <div class="banner large azul">Mis publicaciones</div>
         <div>
             <div id="cards"></div>
         </div>

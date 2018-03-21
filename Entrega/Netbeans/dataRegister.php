@@ -35,6 +35,7 @@ if (count($result) == 0) {
     }
 } else {
     echo 'Usuario ya registrado!';
+    header('location:register.php?registerError=userExists');
 }
 
 //To-do: guardar sesion

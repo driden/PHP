@@ -27,7 +27,7 @@ if (isset($_POST["newPub"])) {
 
     $sqlInsert = "INSERT INTO `publicaciones`"
             . "(`titulo`, `descripcion`, `tipo`, `especie_id`, `raza_id`, `barrio_id`, `abierto`, `usuario_id`, `latitud`, `longitud`) "
-            . "VALUES (:titulo,:desc,:tipo,:especie,:raza,:barrio,0,:user_id,:lat,:long)";
+            . "VALUES (:titulo,:desc,:tipo,:especie,:raza,:barrio,1,:user_id,:lat,:long)";
 
     $params = [
         ["titulo", $titulo, "string"],
